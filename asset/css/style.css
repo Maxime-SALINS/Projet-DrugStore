@@ -1,0 +1,545 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+
+
+body{
+    font-family: 'Mountains of Christmas', serif;
+    background-color: #726255;
+    margin: 0%;
+}
+
+h2 {
+    color: #eeba30;
+    font-size: 55px;
+    -webkit-text-stroke: 2px #ae0001;
+    text-decoration: none;
+    text-align: center;
+}
+
+h3 {
+    color: #eeba30;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #ae0001;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*------------------------------Section NAV---------------------------*/
+header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+    align-content: center;
+    background-color: #372e29;
+}
+
+nav {
+    width: 15%;
+}
+
+.logo {
+    width: 45px;
+    height: auto;
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 50%; 
+    border: groove #eeba30;
+    padding: 2px;
+}
+
+
+.bouton {
+	display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.stylea {
+    color: #eeba30;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #ae0001;
+    text-decoration: none;
+}
+
+/*------------------------------Section body---------------------------*/
+.sec1{
+    background-image: url(../img/background/fond.jpg) ;
+    height: 100vh;
+}
+ 
+.homeP{
+    background-color: rgba(0, 0, 0, 0.593);
+    margin: 20%;
+    margin-top: 0.5%;
+    color: #EEBA30;
+}
+ 
+.homeP h2{
+    -webkit-text-stroke: 1px #AE0001;
+    font-size: 250%;
+}
+
+.sec1 h1{
+    text-transform: uppercase;
+    font-size: 700%;
+    color: #EEBA30;
+    -webkit-text-stroke: 4px #AE0001;
+    text-align: center;
+    margin : 0 0 2% 0 ;
+}
+ 
+.sec1 p{
+    text-align: center;
+    
+    font-size: 18px;
+    color: #fefdfc;
+    
+}
+
+h3{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- Style section produit ------------------------------------------------------------*/
+
+/*----------------- Style Affichage des produits -----------------*/
+
+.dispo_produit{
+    margin: 0 2%;
+}
+
+.affichage_produit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% 0;
+}
+
+.produit{
+    display: flex;
+    justify-content: space-between;
+	align-items: center;
+    width: 50%;
+    margin: 0 0 0 0.5%;
+}
+
+.dispo_img_potion{
+    width: 35%;
+}
+
+.dispo_titre_description{
+    width: 65%;
+}
+
+.dispo_img_h4_sorcier{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/*----------------------- Style des images ----------------------*/
+
+.descrip{
+    width: 100%;
+    border-radius: 10%;
+    box-shadow: 10px 5px 10px;   
+}
+
+.sorcier{
+    width: 14%;
+    border-radius: 40%;
+}
+
+/*------------- Style des titres et des paragraphe--------------*/
+
+.titre_section{
+    color: #EEBA30;
+    font-size: 500%;
+    text-align: center;
+    margin-bottom: 1%;
+    -webkit-text-stroke: 2px #AE0001;
+}
+
+.titre_produit{
+    color: #EEBA30;
+    font-size: xx-large;
+    text-align: center;
+    -webkit-text-stroke: 1px #AE0001;
+    margin: 0%;
+}
+
+.soustitre_produit{
+    width: 50%;
+    font-size: small;
+    color: white;
+    text-align: center;
+    margin: 0%;
+}
+
+.para{
+    font-size: small;
+    color: white;
+    text-align: center;
+    margin: 0%;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- Style section présentation équipe ------------------------------------------------*/
+
+.res{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+   
+}
+
+/*------------------------------Section Personnel---------------------------*/
+
+.card_perso {
+    width: 100%;
+	display: flex;
+    justify-content: space-evenly;
+	align-items: center;
+	align-content: center;
+    text-align: center;
+    line-height: 2px;
+    margin: 0px 0px 10px 0px
+}
+
+
+.perso p {
+    color: white;
+}
+
+.photodePro{  
+    width: 20vh;
+    height: 20vh;
+    border-radius: 20%;
+}
+
+/*------------------------------Section Footer---------------------------*/
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+	align-items: baseline;
+    background-color: #372e29;
+    text-align: center;
+    line-height: 2px;
+}
+
+.footer p {
+    color: white;
+}
+
+.rslogo {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: baseline;
+	align-content: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.image {
+    width: 45px;
+    height: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: baseline;
+	align-content: center;
+    border-radius: 50%; 
+    border: groove #eeba30;
+    padding: 2px;
+}
+
+.apropos {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact {
+    border-spacing: 5px;
+}
+
+#style_contact_footer{
+    color: #eeba30;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #ae0001;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*------------------------------Section contact---------------------------*/
+
+.formulaire {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+}
+
+.erenpotter2 {
+    width: 500px;
+    height: auto;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: baseline;
+	align-content: center;
+    border-radius: 50%; 
+    border: groove #eeba30;
+    padding: 2px;
+}
+
+.contactez-nous {
+    width: 700px;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 0 50px 0 50px;
+    background: white;
+    margin-right: 100px;
+}
+
+.contactez-nous > p {
+    font-weight: 300;
+}
+    
+form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 83px;
+    margin-top: 25px;
+}
+    
+form div > label {
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+    
+form div > input, form div > select, form div > textarea {
+    background: #726255;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Montserrat, "sans-serif";
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+    color: white;
+}
+    
+form div > input, form div > select {
+    height: 50px;
+    padding-left: 10px;
+}
+    
+form div > select {
+    appearance: none;
+    background-size: 15px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDIxMy4zMzMgMjEzLjMzMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjAsNTMuMzMzIDEwNi42NjcsMTYwIDIxMy4zMzMsNTMuMzMzICAgIiBmaWxsPSIjMzAzMDMwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BvbHlnb24+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==');
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+}
+    
+form div > textarea {
+    height: 195px;
+    padding: 15px 0px 0px 10px;
+}
+    
+form div > input::placeholder, form div > textarea::placeholder {
+    color: white;
+}
+    
+form div > select:invalid {
+    color: white;
+}
+    
+form div > select option {
+    color: white;
+}
+    
+form div:last-child {
+    align-items:center;
+    margin-top: 20px;
+}
+    
+form button {
+    width: 310px;
+    max-width: 500px;
+    height: 60px;
+    font-weight: 700;
+    font-size: 20px;
+    background: #726255;
+    border: rgba(48, 48, 48, 0.5) solid 1px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    color: white;
+}
+
+.envoyer {
+    color: #eeba30;
+    font-size: 29px;
+    -webkit-text-stroke: 1px #ae0001;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Mountains of Christmas', serif;
+}
+
+/*----------------------------------------------------------------------------------------------------------/
+/*-------------------------------------------- Responsive ------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+    /*---------------------------------------------------------------------------------------------*/
+    /*---------------------------------------- Style Navbar --------------------------------------*/
+    header{
+        justify-content: center;
+    }
+    
+    nav {
+        width: 100%;
+    }
+
+    /*------------------------- Section présentation entreprise ----------------------------------*/
+
+    .sec1 h1{
+        font-size: 350%;
+        -webkit-text-stroke: 2px #AE0001;
+    }
+
+    .homeP{
+        font-size: x-small;
+        margin: 3%;   
+    }
+    
+    /*--------------------------------- Style section produit ------------------------------------*/
+    /*---------------- Style disposition produit -----------------*/
+    
+    .affichage_produit{
+        display: inline;
+        margin: 3% 0;
+    }
+
+    .produit{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 10% 3%;
+    }
+
+    /*---------------- Style titre & paragraphe -----------------*/
+
+    .titre_section{
+        font-size: 250%;
+        -webkit-text-stroke: 1px #AE0001;
+    }
+
+    .para{
+        font-size: x-small;
+    }
+
+    /*---------------- Personnel !!!!!! -----------------*/
+    
+    .styleP{
+        font-size: 100%;
+        -webkit-text-stroke: 0.5px #AE0001;
+    }
+
+    .photodePro{
+        width: 100%;
+    }
+
+    .perso{
+        margin: 5px 5px 5px 5px;
+    }
+
+    .para_Personnel{
+        font-size: xx-small;
+    }
+
+    #styleP{
+        font-size:95% ;
+        -webkit-text-stroke: 0.5px #AE0001;
+    }
+
+    /*---------------- Style footer -----------------*/
+    
+    .footer h3 {
+        font-size: medium;
+        -webkit-text-stroke: 0.5px #ae0001;
+    }
+
+    .footer p {
+        font-size: xx-small;
+    }
+    
+    .rslogo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: baseline;
+        align-content: center;
+        margin: 0px 0px 10px 0px;
+    }
+    
+    .image {
+        width: 30px;
+    }
+
+    .apropos {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #style_contact_footer{
+        font-size: 20px;
+        -webkit-text-stroke: 0.5px #ae0001;
+    }
+
+    /*------------- Style formulaire -----------------*/
+
+    .formulaire {
+       flex-wrap: wrap;
+       padding: 0%;
+       margin-top: 3%;
+    }
+
+    .erenpotter2 {
+        width: 90%;
+        margin : 3% 2% 3% 4% ;
+    }
+    
+    .contactez-nous {
+        margin : 0 2% 0 2% ;
+        padding: 0 3%;
+    }
+}

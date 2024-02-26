@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Boutique du chemin de Traverse</title>
-  <link rel="stylesheet" href="./asset/css/style.css">
-  <link rel="shortcut icon" href="./asset/img/logo/Logo_projet.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../asset/css/style.css">
+  <link rel="shortcut icon" href="../../asset/img/logo/Logo_projet.png" type="image/x-icon">
 </head>
 
 <body>
   <header>
     <div>
-      <img class="logo" src="./asset/img/logo/Logo_projet.png" alt="un logo">
+      <img class="logo" src="../../asset/img/logo/Logo_projet.png" alt="un logo">
     </div>
     <nav>
       <ul class="bouton">

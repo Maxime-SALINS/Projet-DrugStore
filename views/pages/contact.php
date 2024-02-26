@@ -1,4 +1,4 @@
-<?php  require_once './composant/header.php'?>
+<?php require_once ('../../views/components/header.php');?>
     <main>
         <section class="formulaire">
             <div class="contactez-nous">
@@ -33,8 +33,8 @@
                 </form>
             </div>
             <div>
-                <img class="erenpotter2" src="./asset/img/personnage/erenpotter2.jpg" alt="photo-erenpotter">
+                <img class="erenpotter2" src="../../asset/img/personnage/erenpotter2.jpg" alt="photo-erenpotter">
             </div>
         </section>
     </main>
-<?php  require_once './composant/footer.php'?>
+<?php  require_once '../../views/components/footer.php';?>

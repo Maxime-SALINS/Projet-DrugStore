@@ -11,8 +11,8 @@
         <a id="style_contact_footer" href="contact.html" target="_blank">Contact</a>
         <p class="footer_p">Suivez nous sur nos réseaux</p>
         <div class="rslogo">
-          <img class="image" src="./asset/img/logo/FBlogo.png" alt="logo_Facebook">
-          <img class="image" src="./asset/img/logo/instalogo.png" alt="Logo_instagram">
+          <img class="image" src="../../asset/img/logo/FBlogo.png" alt="logo_Facebook">
+          <img class="image" src="../../asset/img/logo/instalogo.png" alt="Logo_instagram">
         </div>
       </div>
       <div class="horaire">

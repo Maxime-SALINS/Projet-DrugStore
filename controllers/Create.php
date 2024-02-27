@@ -59,15 +59,15 @@
                 $newdonnees = [
                     $name_product,
                     $image_product,
-                    $name_wizard,
-                    $image_wizard,
                     $first_power,
                     $second_power,
-                    $prix
+                    $prix,
+                    $name_wizard,
+                    $image_wizard
                 ];
                 
                 // On utilise les requêtes préparées et des marqueurs nommés
-                $reqprepare = $bdd->prepare("INSERT INTO produits(`titre`,`image_produit`,`nom_sorcier`,`image_sorcier`, `first_power`, `second_power`, `prix`) VALUES (?,?,?,?,?,?,?)");
+                $reqprepare = $bdd->prepare("INSERT INTO produits(`titre`,`image_produit`, `first_power`, `second_power`, `prix`,`nom_sorcier`,`image_sorcier`) VALUES (?,?,?,?,?,?,?)");
                 // On execute la requête
                 $reqprepare->execute($newdonnees);
             } else {

@@ -48,7 +48,7 @@
             <img class="sorcier" src="../../asset/img/personnage/Dumbledore.jpg" alt="une photo">
           </div>
           <p class="para">Pouvoir principal : Prendre l'apparence d'un autre humain</p>
-          <p class="para">Pouvoir secondaire : Modeler sont corps en différent objet.</p>
+          <p class="para">Pouvoir secondaire : Modeler son corps en différent objet.</p>
         </div>
       </div>
       <div class="produit">

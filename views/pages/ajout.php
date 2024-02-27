@@ -1,5 +1,10 @@
 <?php 
 require_once ('../../views/components/header.php');
+require_once ('../../utilities/db.php');
+
+$reponse = $bdd->query('SELECT * FROM produits');
+$table = $reponse->fetchAll(PDO::FETCH_ASSOC);
+
 require_once ('../../controllers/Create.php');
 
 ?>

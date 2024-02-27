@@ -22,7 +22,7 @@
         if (empty($name_product) && empty($name_wizard) && empty($prix) && empty($img_product) && empty($img_wizard) && empty($first_power) && empty($second_power)) {
             $product = $wizard = $power= $img = $price = '<span style="color:red">*Ce champ est obligatoire</span>';
             $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
-        } else {
+        } else if (!in_array($name_product, array_column($table, "titre"))) {
 
             //On gére en premier l'upload des images
             //Image produit :
@@ -52,40 +52,28 @@
             if (in_array($extension,$extensionValid) && in_array($extension_wizard,$extensionValid)){
                 move_uploaded_file($tmpName, '../../asset/img/potion/' . $img_product);
                 move_uploaded_file($wizard_url, '../../asset/img/personnage/' . $img_wizard);
+                
+                $image_product = "../../asset/img/potion/" . $img_product;
+                $image_wizard = "../../asset/img/personnage/" .  $img_wizard;
+                
+                $newdonnees = [
+                    $name_product,
+                    $image_product,
+                    $name_wizard,
+                    $image_wizard,
+                    $first_power,
+                    $second_power,
+                    $prix
+                ];
+                
+                // On utilise les requêtes préparées et des marqueurs nommés
+                $reqprepare = $bdd->prepare("INSERT INTO produits(`titre`,`image_produit`,`nom_sorcier`,`image_sorcier`, `first_power`, `second_power`, `prix`) VALUES (?,?,?,?,?,?,?)");
+                // On execute la requête
+                $reqprepare->execute($newdonnees);
             } else {
                 echo "Mauvaise extension d'images";
             }
-            $image_product = "../../asset/img/potion/" . $img_product;
-            $image_wizard = "../../asset/img/personnage/" .  $img_wizard;
-            
-            $newdonnees = [
-                $name_product,
-                $image_product,
-                $name_wizard,
-                $image_wizard,
-                $first_power,
-                $second_power,
-                $prix
-            ];
-            
-            // On utilise les requêtes préparées et des marqueurs nommés
-            $reqprepare = $bdd->prepare("INSERT INTO produits(`titre`,`image_produit`,`nom_sorcier`,`image_sorcier`, `first_power`, `second_power`, `prix`) VALUES (?,?,?,?,?,?,?)");
-            // On execute la requête
-            $reqprepare->execute($newdonnees);
+        } else {
+            echo "Le produit existe déjà !";
         }
-        
-
-        //if (!in_array($name_product, array_column($table, "name_product"))) {
-        //On regroupe les nouvelles données dans un tableau
-        // $newdonnees = [
-        //     $model,
-        //     $stock,
-        //     $vendu,
-        //     $image
-        // ];
-        //On utilise les requêtes préparées et des marqueurs nommés
-        // $reqprepare = $conn->prepare("INSERT INTO cars(`model`,`stock`,`vendu`,`image`) VALUES (?,?,?,?)");
-        //On execute la requête
-        // $reqprepare->execute($newdonnees);
-        // }
     }

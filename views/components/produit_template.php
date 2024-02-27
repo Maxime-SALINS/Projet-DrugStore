@@ -13,7 +13,7 @@ function produit_template($produit) {
             </div>
             <a href="produit.php?id='.$produit['id'].'">En savoir plus</a>
             <a href="modif.php?id='.$produit['id'].'">Modification</a>
-            <a href="Delete.php?id='.$produit['id'].'">Supprimer</a>
+            <a href="../../controllers/Delete.php?id='.$produit['id'].'">Supprimer</a>
         </div>
     </div>
     ';

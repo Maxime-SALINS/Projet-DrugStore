@@ -119,7 +119,8 @@ h2{
 
 .affichage_produit{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     margin: 3% 0;
 }

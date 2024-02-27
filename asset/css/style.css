@@ -117,10 +117,10 @@ h2{
     margin: 0 2%;
 }
 
-.affichage_produit{
+.card{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 3% 0;
 }

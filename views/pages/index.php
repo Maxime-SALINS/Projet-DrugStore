@@ -24,7 +24,7 @@ require_once ('../../utilities/db.php');
 </section>
 <section class="potion">
   <h2 class="titre_section">Les Potions d'Eldia</h2>
-  <div class="affichage_produit">
+  <div class="card">
     <?php 
       require_once ('../../views/components/produit_template.php');
 

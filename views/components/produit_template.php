@@ -12,8 +12,8 @@ function produit_template($produit) {
                 <img src="' . $produit['image_sorcier'] . '" alt="photo Harry Potter" class="sorcier">
             </div>
             <a href="produit.php?id='.$produit['id'].'">En savoir plus</a>
-            <a href="Delete.php?id='.$produit['id'].'">Supprimer</a>
             <a href="modif.php?id='.$produit['id'].'">Modification</a>
+            <a href="Delete.php?id='.$produit['id'].'">Supprimer</a>
         </div>
     </div>
     ';

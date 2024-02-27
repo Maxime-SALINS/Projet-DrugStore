@@ -20,6 +20,9 @@
           <a class="stylea" href="index.php">Accueil</a>
         </li>
         <li>
+          <a class="stylea" href="ajout.php">Ajout</a>
+        </li>
+        <li>
           <a class="stylea" target="_blank" href="contact.php">Contact</a>
         </li>
       </ul>

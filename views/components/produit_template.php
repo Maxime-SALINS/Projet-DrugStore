@@ -14,6 +14,7 @@ function produit_template($produit)
             </div>
             <p class="para">Pouvoir principal : ' . $produit['first_power'] . '</p>
             <p class="para"> Pouvoir secondaire : ' . $produit['second_power'] . '</p>
+            <p class="para"> Pouvoir secondaire : ' . $produit['prix'] . '</p>
         </div>
     </div>
     ';

@@ -2,10 +2,10 @@
 require_once ('../../views/components/header.php');
 require_once ('../../utilities/db.php');
 
-$reponse = $bdd->query('SELECT * FROM produits');
+$reponse = $bdd->query('SELECT * FROM product');
 $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
-require_once ('../../controllers/Create.php');
+require_once ('../../controllers/Create_product.php');
 
 ?>
 
@@ -16,10 +16,6 @@ require_once ('../../controllers/Create.php');
             <div>
                 <input type="text" name="name_product" id="name_product" placeholder="Nom produit">
                 <?php echo $product?>
-            </div>
-            <div>
-                <input type="text" name="name_wizard" id="name_wizard" placeholder="Nom sorcier">
-                <?php echo $wizard?>
             </div>
             <div>
                 <input type="text" name="first_power" id="first_power" placeholder="Premier pouvoir">
@@ -34,13 +30,12 @@ require_once ('../../controllers/Create.php');
                 <?php echo $price?>
             </div>
             <div>
-                <label for="image_product">Image du produit</label>
-                <input type="file" name="image_product" id="image_product">
-                <?php echo $img?>
+                <input type="number" name="wizard_id" id="wizard_id"" placeholder="id du sorcier">
+                <?php echo $wizard?>
             </div>
             <div>
-                <label for="image_wizard">Image du sorcier</label>
-                <input type="file" name="image_wizard" id="image_wizard">
+                <label for="image_product">Image du produit</label>
+                <input type="file" name="image_product" id="image_product">
                 <?php echo $img?>
             </div>
             <div class="w-100 d-flex justify-content-center p-5">

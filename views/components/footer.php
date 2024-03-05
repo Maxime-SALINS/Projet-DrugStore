@@ -8,7 +8,7 @@
         <p>Tout droits réservés - Copyright © 2023</p>
       </div>
       <div class="contact">
-        <a id="style_contact_footer" href="contact.html" target="_blank">Contact</a>
+        <a id="style_contact_footer" href="contact.php" target="_blank">Contact</a>
         <p class="footer_p">Suivez nous sur nos réseaux</p>
         <div class="rslogo">
           <img class="image" src="../../asset/img/logo/FBlogo.png" alt="logo_Facebook">

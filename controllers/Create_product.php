@@ -2,7 +2,7 @@
     
     $product = '';
     $power = '';
-    $wizard = '';
+    $wizard_message = '';
     $img = '';
     $message = '';
     $price = '';
@@ -19,7 +19,7 @@
         
         //Script: Envoie vers la base de données
         if (empty($name_product) && empty($prix) && empty($img_product) && empty($first_power) && empty($second_power) && empty($id_wizard)) {
-            $product = $wizard = $power= $img = $price = '<span style="color:red">*Ce champ est obligatoire</span>';
+            $product = $wizard_message = $power= $img = $price = '<span style="color:red">*Ce champ est obligatoire</span>';
             $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
         } else if (!in_array($name_product, array_column($table, "titre"))) {
 

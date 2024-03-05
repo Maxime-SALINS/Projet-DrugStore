@@ -129,8 +129,8 @@ h2{
     display: flex;
     justify-content: space-between;
 	align-items: center;
-    width: 50%;
-    margin: 0 0 0 0.5%;
+    width: 30%;
+    margin: 1.5% 1.5% 1.5% 1.5%;
 }
 
 .dispo_img_potion{
@@ -146,6 +146,22 @@ h2{
     align-items: center;
     justify-content: center;
     padding: 10px 0;
+}
+
+.style_lien{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 5%;
+}
+
+.style_a{
+    text-decoration: none;
+    color: white;
+}
+
+.style_a:hover{
+    color: #EEBA30;
 }
 
 /*----------------------- Style des images ----------------------*/

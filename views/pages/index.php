@@ -28,7 +28,11 @@ require_once ('../../utilities/db.php');
     <?php 
       require_once ('../../views/components/produit_template.php');
 
-      $reponse = $bdd->query('SELECT * FROM produits');
+      // SELECT *
+      // FROM A
+      // INNER JOIN B ON A.key = B.key
+
+      $reponse = $bdd->query('SELECT * FROM product INNER JOIN wizard ON product.wizard_id = wizard.id');
       $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
       // var_dump($table);
 

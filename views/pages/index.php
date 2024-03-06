@@ -1,9 +1,9 @@
 <?php 
-require_once ('../../views/components/header.php');
-require_once ('../../utilities/db.php');
+require_once '../../views/components/header.php';
+require_once '../../utilities/db.php';
 ?>
 <section class="sec1">
-  <h1>Le Chemin de Traverse</h1>
+  <h1>La boutique du sorcier</h1>
   <div class="homeP">
     <h2>Qui somme nous ?</h2>
     <p>

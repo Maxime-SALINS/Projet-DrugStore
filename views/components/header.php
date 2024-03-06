@@ -13,7 +13,7 @@
 <body>
   <header>
     <div>
-      <img class="logo" src="../../asset/img/logo/Logo_projet.png" alt="un logo">
+    <a href="index.php"><img class="logo" src="../../asset/img/logo/Logo_projet.png" alt="un logo"></a>
     </div>
     <nav>
       <ul class="bouton">

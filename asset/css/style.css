@@ -1,10 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
-
-
 body{
-    font-family: 'Mountains of Christmas', serif;
     background-color: #726255;
     margin: 0%;
 }
@@ -72,7 +66,7 @@ nav {
 }
  
 .homeP{
-    background-color: rgba(0, 0, 0, 0.593);
+    background-color: rgba(0, 0, 0, 0.75);
     margin: 20%;
     margin-top: 0.5%;
     color: #EEBA30;
@@ -85,9 +79,9 @@ nav {
 
 .sec1 h1{
     text-transform: uppercase;
-    font-size: 700%;
+    font-size: 600%;
     color: #EEBA30;
-    -webkit-text-stroke: 4px #AE0001;
+    -webkit-text-stroke: 3px #AE0001;
     text-align: center;
     margin : 0 0 2% 0 ;
 }

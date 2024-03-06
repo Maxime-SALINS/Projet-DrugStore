@@ -17,10 +17,10 @@ $id = $_GET['id'];
 foreach ($table as $produit) {
     if ($produit['id'] == $id) {
         echo '
-        <section>
+        <section class="style_section_product">
             <h3 class="title_product">Potion ' . $produit['titre'] . '</h3>
             <div class="dispo_infos_product">
-                <div class="produit">
+                <div class="product">
                     <div class="dispo_img_potion">
                         <img src="' . $produit['product_image'] . '" class="descrip" alt="une photo">
                     </div>
@@ -29,9 +29,9 @@ foreach ($table as $produit) {
                             <h4 class="soustitre_produit">(Crée par ' . $produit['wizard_name'] . ')</h4>
                             <img src="' . $produit['wizard_image'] . '" alt="photo'.$produit['wizard_name'].'" class="sorcier">
                         </div>
-                        <p class="para">Pouvoir principal : ' . $produit['first_power'] . '</p>
-                        <p class="para"> Pouvoir secondaire : ' . $produit['second_power'] . '</p>
-                        <p class="para"> Prix : ' . $produit['prix'] .'€</p>
+                        <p class="p_product">Pouvoir principal : ' . $produit['first_power'] . '</p>
+                        <p class="p_product"> Pouvoir secondaire : ' . $produit['second_power'] . '</p>
+                        <p class="prix_product"> Prix : ' . $produit['prix'] .'€</p>
                     </div>
                 </div>
             </div>

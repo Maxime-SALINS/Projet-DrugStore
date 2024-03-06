@@ -15,8 +15,8 @@
     <div>
     <a href="index.php"><img class="logo" src="../../asset/img/logo/Logo_projet.png" alt="un logo"></a>
     </div>
-    <nav>
-      <ul class="bouton">
+    <nav class="navbar">
+      <ul class="ul_navbar">
         <li>
           <a class="stylea" href="index.php">Accueil</a>
         </li>
@@ -28,6 +28,14 @@
         </li>
         <li>
           <a class="stylea" target="_blank" href="contact.php">Contact</a>
+        </li>
+      </ul>
+      <ul class="ul_connexion">
+        <li class="btn_login">
+          <a class="login_singup" href="#">Connexion</a>
+        </li>
+        <li class="btn_singup">
+          <a class="login_singup" href="#">Inscription</a>
         </li>
       </ul>
     </nav>

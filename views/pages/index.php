@@ -33,23 +33,23 @@ require_once '../../utilities/db.php';
       // FROM A
       // INNER JOIN B ON A.key = B.key
 
-      $reponse = $bdd->query('SELECT product.id, 
-      product.titre, 
-      product.product_image, 
-      product.first_power, 
-      product.second_power, 
-      product.prix, 
-      product.wizard_id, 
-      wizard.wizard_name, 
-      wizard.wizard_image 
-      FROM product INNER JOIN wizard ON product.wizard_id = wizard.id');
+      // $reponse = $bdd->query('SELECT product.id, 
+      // product.titre, 
+      // product.product_image, 
+      // product.first_power, 
+      // product.second_power, 
+      // product.prix, 
+      // product.wizard_id, 
+      // wizard.wizard_name, 
+      // wizard.wizard_image 
+      // FROM product INNER JOIN wizard ON product.wizard_id = wizard.id');
 
-      $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
+      // $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
       // var_dump($table);
 
-      foreach ($table as $produit) {
-        echo produit_template($produit);
-      }
+      // foreach ($table as $produit) {
+      //   echo produit_template($produit);
+      // }
     ?>
   </div>
 </section>

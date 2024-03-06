@@ -1,4 +1,5 @@
 <?php
+$title = "Page | Modification";
 require_once '../../views/components/header.php';
 require_once '../../utilities/db.php';
 require_once '../../controllers/Update.php';

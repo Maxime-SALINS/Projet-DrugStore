@@ -1,4 +1,7 @@
-<?php require_once ('../../views/components/header.php');?>
+<?php
+$title = "Page | Contact";
+require_once ('../../views/components/header.php');
+?>
     <main>
         <section class="formulaire">
             <div class="contactez-nous">

@@ -1,9 +1,10 @@
-<?php 
+<?php
+$title = "Page | Ajout sorcier";
 require_once ('../../views/components/header.php');
 require_once ('../../utilities/db.php');
 
 $reponse = $bdd->query('SELECT * FROM wizard');
-$table = $reponse->fetchAll(PDO::FETCH_ASSOC);
+$wizard_table = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
 require_once ('../../controllers/Create_wizard.php');
 

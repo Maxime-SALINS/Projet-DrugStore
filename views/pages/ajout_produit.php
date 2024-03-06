@@ -1,6 +1,7 @@
 <?php
-require_once('../../views/components/header.php');
-require_once('../../utilities/db.php');
+$title = "Page | Ajout produit";
+require_once '../../views/components/header.php';
+require_once '../../utilities/db.php';
 
 $reponse = $bdd->query('SELECT * FROM product');
 $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
@@ -8,7 +9,7 @@ $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
 $reponse = $bdd->query('SELECT * FROM wizard');
 $table_wizard = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
-require_once('../../controllers/Create_product.php');
+require_once '../../controllers/Create_product.php';
 
 ?>
 

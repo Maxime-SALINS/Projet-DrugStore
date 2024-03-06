@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($name_wizard) && empty($img_wizard)) {
         $wizard= $img = '<span style="color:red">*Ce champ est obligatoire</span>';
         $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
-    } else if (!in_array($name_wizard, array_column($table, "wizard_name"))) {
+    } else if (!in_array($name_wizard, array_column($wizard_table, "wizard_name"))) {
         //Image sorcier :
         $wizard_url = $_FILES['image_wizard']['tmp_name'];
         $wizard_type = $_FILES['image_wizard']['type'];

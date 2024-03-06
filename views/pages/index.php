@@ -1,4 +1,5 @@
-<?php 
+<?php
+$title = "Page | Accueil";
 require_once '../../views/components/header.php';
 require_once '../../utilities/db.php';
 ?>

@@ -1,9 +1,9 @@
 <?php
 require_once '../utilities/db.php';
 
-$id = $_GET["id"];
+$id = $_GET['id'];
 //On prépare la requête SQL DELETE
-$reqprepare = $bdd->prepare("DELETE FROM `produits` WHERE id = :id");
+$reqprepare = $bdd->prepare("DELETE FROM `product` WHERE id = :id");
 
 //On Lie la variable $id à 'id'
 $reqprepare->bindValue(':id', $id);

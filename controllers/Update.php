@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $prix= intval($_POST['prix']);
     
     //On prépare la requête SQL UPDATE
-    $reqprapare = $bdd->prepare("UPDATE produits SET first_power = :first_power, second_power = :second_power, prix = :prix WHERE id = :id");
+    $reqprapare = $bdd->prepare("UPDATE product SET first_power = :first_power, second_power = :second_power, prix = :prix WHERE id = :id");
 
     //On Lie les variables $vendu et $stock à :vendu et :stock et $id à :id
     $reqprapare->bindValue(':id', $id);

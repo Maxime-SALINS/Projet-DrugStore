@@ -1,0 +1,13 @@
+.dispo_infos_product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_product{
+    color: #EEBA30;
+    font-size: xx-large;
+    text-align: center;
+    -webkit-text-stroke: 1px #AE0001;
+    margin: 0%;
+}

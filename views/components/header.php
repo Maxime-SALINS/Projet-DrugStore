@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Boutique du chemin de Traverse</title>
   <link rel="stylesheet" href="../../asset/css/style.css">
+  <link rel="stylesheet" href="../../asset/css/product.css">
   <link rel="shortcut icon" href="../../asset/img/logo/Logo_projet.png" type="image/x-icon">
 </head>
 

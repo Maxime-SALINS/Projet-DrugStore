@@ -32,10 +32,10 @@
       </ul>
       <ul class="ul_connexion">
         <li class="btn_login">
-          <a class="login_singup" href="#">Connexion</a>
+          <a class="login_singup" href="login.php">Connexion</a>
         </li>
         <li class="btn_singup">
-          <a class="login_singup" href="#">Inscription</a>
+          <a class="login_singup" href="signup.php">Inscription</a>
         </li>
       </ul>
     </nav>

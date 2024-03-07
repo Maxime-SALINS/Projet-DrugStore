@@ -1,12 +1,12 @@
 <?php
 $title = "Page | Ajout sorcier";
-require_once ('../../views/components/header.php');
-require_once ('../../utilities/db.php');
+require_once '../../views/components/header.php';
+require_once '../../utilities/db.php';
 
 $reponse = $bdd->query('SELECT * FROM wizard');
 $wizard_table = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
-require_once ('../../controllers/Create_wizard.php');
+require_once '../../controllers/Create_wizard.php';
 
 ?>
 <section>

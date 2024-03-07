@@ -11,17 +11,17 @@ require_once '../../controllers/Connexion.php';
     <div>
         <form action="" method="post">
             <div>
-                <input type="text" name="name_user" id="name_user" placeholder="Entrer votre nom">
-                <?php //echo $name?>
+                <input type="text" name="name_user" id="name_user" placeholder="Entrer votre nom" autocomplete="off">
+                <?php echo $name?>
             </div>
             <div>
-                <input type="password" name="password" id="password" placeholder="Mot de passe">
-                <?php //echo $img?>
+                <input type="password" name="password" id="password" placeholder="Mot de passe" autocomplete="off">
+                <?php echo $message_passage?>
             </div>
             <div>
                 <button type="submit">Connexion</button>
             </div>
-            <?php //echo $message?>
+            <?php echo $message?>
         </form>
     </div>
 </section>

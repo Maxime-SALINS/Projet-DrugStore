@@ -30,6 +30,8 @@ require_once 'header_template.php';
         echo headerAdmin();
       } else if ($_SESSION['user_type'] == 'wizard'){
         echo headerWizard();
+      } else {
+        echo headerUserLogin();
       }
       
       ?>

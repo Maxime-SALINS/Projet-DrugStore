@@ -43,6 +43,29 @@ function headerWizard(){
     </ul>';
 }
 
+function headerUserLogin(){
+    return '
+    <ul class="ul_navbar">
+        <li>
+            <a class="stylea" href="index.php">Accueil</a>
+        </li>
+        <li>
+            <a class="stylea" href="#produit">Produit</a>
+        </li>
+        <li>
+            <a class="stylea" href="#team">Notre équipe</a>
+        </li>
+        <li>
+            <a class="stylea" target="_blank" href="contact.php">Contact</a>
+        </li>
+    </ul>
+    <ul class="ul_connexion">
+        <li class="btn_logout">
+            <a class="login_singup" href="../../controllers/Logout.php">Déconnexion</a>
+        </li>
+    </ul>';
+}
+
 function headerUser(){
     return '
     <ul class="ul_navbar">

@@ -6,6 +6,6 @@ $_SESSION = array();
 
 session_destroy();
 
-header('Location: ../../views/pages/index.php');
+header('Location: ../../../La-boutique-du-chemin-de-traverse/views/pages/index.php');
 
 ?>

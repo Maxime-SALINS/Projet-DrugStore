@@ -25,9 +25,11 @@ require_once 'header_template.php';
     <nav class="navbar">
       <?php 
       if (empty($_SESSION['user_type'])) {
-        echo headerAdmin();
-      } else if ($_SESSION['user_type'] == 'admin'){
         echo headerUser();
+      } else if ($_SESSION['user_type'] == 'admin'){
+        echo headerAdmin();
+      } else if ($_SESSION['user_type'] == 'wizard'){
+        echo headerWizard();
       }
       
       ?>

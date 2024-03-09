@@ -16,7 +16,7 @@ require_once '../../controllers/Connexion.php';
             </div>
             <div>
                 <input type="password" name="password" id="password" placeholder="Mot de passe" autocomplete="off">
-                <?php echo $message_passage?>
+                <?php echo $message_password?>
             </div>
             <div>
                 <select name="user_type" id="user_type">

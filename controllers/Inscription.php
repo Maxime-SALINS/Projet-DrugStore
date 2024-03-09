@@ -1,5 +1,4 @@
 <?php
-
 $name = '';
 $user_message = '';
 $message_password = '';
@@ -10,18 +9,12 @@ $nameColum = '';
 $passwordColum = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     if (!empty($_POST['name_user']) && !empty($_POST['password']) && !empty($_POST['user_type'])) {
         $name_user = htmlspecialchars($_POST['name_user']);
         $password = $_POST['password'];
         $user_type = $_POST['user_type'];
 
-        if ($user_type == 'admin') {
-            $tableChoice = 'admin';
-            $nameColum = 'admin_name';
-            $passwordColum = 'admin_password';
-            $id_colum = 'id_admin';
-        } else if ($user_type == 'wizard') {
+        if ($user_type == 'wizard') {
             $tableChoice = 'wizard';
             $nameColum = 'wizard_name';
             $passwordColum = 'wizard_password';
@@ -33,22 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $id_colum = 'id_user';
         }
 
-        $autentification = [$name_user, $password];
+        $sub = [$name_user,  $password];
 
-        $recupUser = $bdd->prepare("SELECT * FROM $tableChoice WHERE $nameColum = ? AND $passwordColum = ?");
-        $recupUser->execute($autentification);
+        $insertUser = $bdd->prepare("INSERT INTO $tableChoice($nameColum,$passwordColum)VALUES(?,?)");
+        $insertUser->execute($sub);
 
-        if ($recupUser->rowCount() > 0) {
-            // echo "Connexion réussi";
-            $_SESSION['name_user'] = $name_user;
-            $_SESSION['password'] = $password;
-            $_SESSION['user_type'] =  $tableChoice;
-            $_SESSION[$id_colum] = $recupUser->fetch()[$id_colum];
-            header('Location: ../../views/pages/index.php');
-        } else {
-            $message = "Votre mot de passe ou nom d'utilisateur est incorrect";
-        }
-    } else {
+        header('Location: ../../views/pages/index.php');
+        
+    } else{
         $name = $message_password = $user_message = '<span style="color:red">*Ce champ est obligatoire</span>';
         $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
     }

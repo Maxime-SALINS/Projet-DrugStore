@@ -85,6 +85,11 @@ header{
     padding: 6%;
 }
 
+.btn_logout{
+    background-color: violet;
+    padding: 6%;
+}
+
 /*------------------------------Section body---------------------------*/
 .sec1{
     background-image: url(../img/background/fond.jpg) ;

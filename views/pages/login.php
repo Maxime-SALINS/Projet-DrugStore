@@ -19,6 +19,15 @@ require_once '../../controllers/Connexion.php';
                 <?php echo $message_passage?>
             </div>
             <div>
+                <select name="user_type" id="user_type">
+                    <option value="">Choix utilisateur</option>
+                    <option value="user">Utilisateur</option>
+                    <option value="wizard">Sorcier</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <?php echo $user_message?>
+            </div>
+            <div>
                 <button type="submit">Connexion</button>
             </div>
             <?php echo $message?>

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require_once 'header_template.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,27 +23,13 @@
     <a href="index.php"><img class="logo" src="../../asset/img/logo/Logo_projet.png" alt="un logo"></a>
     </div>
     <nav class="navbar">
-      <ul class="ul_navbar">
-        <li>
-          <a class="stylea" href="index.php">Accueil</a>
-        </li>
-        <li>
-          <a class="stylea" href="ajout_produit.php">Ajout produit</a>
-        </li>
-        <li>
-          <a class="stylea" href="ajout_wizard.php">Ajout sorcier</a>
-        </li>
-        <li>
-          <a class="stylea" target="_blank" href="contact.php">Contact</a>
-        </li>
-      </ul>
-      <ul class="ul_connexion">
-        <li class="btn_login">
-          <a class="login_singup" href="login.php">Connexion</a>
-        </li>
-        <li class="btn_singup">
-          <a class="login_singup" href="signup.php">Inscription</a>
-        </li>
-      </ul>
+      <?php 
+      if (empty($_SESSION['user_type'])) {
+        echo headerAdmin();
+      } else if ($_SESSION['user_type'] == 'admin'){
+        echo headerUser();
+      }
+      
+      ?>
     </nav>
   </header>

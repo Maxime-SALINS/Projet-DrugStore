@@ -24,7 +24,7 @@ require_once '../../utilities/db.php';
   </div>
 </section>
 <section class="potion">
-  <h2 class="titre_section">Les Potions d'Eldia</h2>
+  <h2 id="produit" class="titre_section">Les Potions d'Eldia</h2>
   <div class="card">
     <?php 
       require_once ('../../views/components/produit_template.php');
@@ -53,7 +53,7 @@ require_once '../../utilities/db.php';
     ?>
   </div>
 </section>
-<section class="personnel">
+<section id="team" class="personnel">
   <h2 class="titre_section">Le Personnel</h2>
   <div class="card_perso">
     <div class="perso">

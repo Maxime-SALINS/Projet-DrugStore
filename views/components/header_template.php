@@ -18,7 +18,7 @@ function headerAdmin(){
     </ul>
     <ul class="ul_connexion">
         <li class="btn_logout">
-            <a class="login_singup" href="login.php">Déconnexion</a>
+            <a class="login_singup" href="../../controllers/Logout.php">Déconnexion</a>
         </li>
     </ul>';
 }
@@ -38,7 +38,7 @@ function headerWizard(){
     </ul>
     <ul class="ul_connexion">
         <li class="btn_logout">
-            <a class="login_singup" href="login.php">Déconnexion</a>
+            <a class="login_singup" href="../../controllers/Logout.php">Déconnexion</a>
         </li>
     </ul>';
 }

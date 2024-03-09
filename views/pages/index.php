@@ -32,24 +32,19 @@ require_once '../../utilities/db.php';
       // SELECT *
       // FROM A
       // INNER JOIN B ON A.key = B.key
+      $req = $bdd->query('SELECT * FROM product INNER JOIN wizard ON product.wizard_id_wizard = wizard.id_wizard');
+      $reponse = $bdd->query('SELECT * FROM category_has_product INNER JOIN product ON category_has_product.product_id_product = product.id_product');
 
-      // $reponse = $bdd->query('SELECT product.id, 
-      // product.titre, 
-      // product.product_image, 
-      // product.first_power, 
-      // product.second_power, 
-      // product.prix, 
-      // product.wizard_id, 
-      // wizard.wizard_name, 
-      // wizard.wizard_image 
-      // FROM product INNER JOIN wizard ON product.wizard_id = wizard.id');
+      $table_wizard = $req->fetchAll(PDO::FETCH_ASSOC);
+      $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
+      // var_dump($table_product);
+      // var_dump($table_wizard);
 
-      // $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
-      // var_dump($table);
-
-      // foreach ($table as $produit) {
-      //   echo produit_template($produit);
-      // }
+      foreach ($table_product as $produit) {
+        foreach( $table_wizard as $wizard){
+          echo produit_template($produit,$wizard);
+        }
+      }
     ?>
   </div>
 </section>

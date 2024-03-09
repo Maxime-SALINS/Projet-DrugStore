@@ -1,7 +1,7 @@
 <?php
     
     $product = '';
-    $power = '';
+    $descript = '';
     $wizard_message = '';
     $img = '';
     $message = '';
@@ -13,13 +13,13 @@
         $name_product = $_POST["name_product"];
         $prix = intval($_POST["prix"]);
         $img_product = $_FILES['image_product']['name'];
-        $first_power = $_POST["first_power"];
-        $second_power = $_POST["second_power"];
+        $descript_product = $_POST['product_description'];
         $id_wizard = intval($_POST["wizard_id"]);
+        $id_order = 1;
         
         //Script: Envoie vers la base de données
-        if (empty($name_product) && empty($prix) && empty($img_product) && empty($first_power) && empty($second_power) && empty($id_wizard)) {
-            $product = $wizard_message = $power= $img = $price = '<span style="color:red">*Ce champ est obligatoire</span>';
+        if (empty($name_product) && empty($prix) && empty($img_product) && empty($descript_product) && empty($id_wizard)) {
+            $product = $wizard_message = $descript = $img = $price = '<span style="color:red">*Ce champ est obligatoire</span>';
             $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
         } else if (!in_array($name_product, array_column($table, "titre"))) {
 
@@ -46,14 +46,14 @@
                 $newdonnees = [
                     $name_product,
                     $image_product,
-                    $first_power,
-                    $second_power,
+                    $descript_product,
                     $prix,
-                    $id_wizard
+                    $id_wizard,
+                    $id_order,
                 ];
                 
                 // On utilise les requêtes préparées et des marqueurs nommés
-                $reqprepare = $bdd->prepare("INSERT INTO product(`titre`,`product_image`, `first_power`, `second_power`, `prix`,`wizard_id`) VALUES (?,?,?,?,?,?)");
+                $reqprepare = $bdd->prepare("INSERT INTO product(`product_name`,`product_image`, `product_description`,`price`,`wizard_id_wizard`,`order_id`) VALUES (?,?,?,?,?,?)");
                 // On execute la requête
                 $reqprepare->execute($newdonnees);
             } else {

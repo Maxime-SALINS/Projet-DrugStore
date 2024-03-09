@@ -22,12 +22,8 @@ require_once '../../controllers/Create_product.php';
                 <?php echo $product ?>
             </div>
             <div>
-                <input type="text" name="first_power" id="first_power" placeholder="Premier pouvoir">
-                <?php echo $power ?>
-            </div>
-            <div>
-                <input type="text" name="second_power" id="second_power" placeholder="Second pouvoir">
-                <?php echo $power ?>
+                <textarea name="product_description" id="product_description" cols="30" rows="10" placeholder="Déscription du produit"></textarea>
+                <?php echo $descript ?>
             </div>
             <div>
                 <input type="number" name="prix" id="prix" placeholder="Prix du produit">

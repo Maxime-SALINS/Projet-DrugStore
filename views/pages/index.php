@@ -39,10 +39,29 @@ require_once '../../utilities/db.php';
       $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
       // var_dump($table_product);
       // var_dump($table_wizard);
-
-      foreach ($table_product as $produit) {
-        foreach( $table_wizard as $wizard){
-          echo produit_template($produit,$wizard);
+      if (empty($_SESSION['user_type'])) {
+        foreach ($table_product as $produit) {
+          foreach( $table_wizard as $wizard){
+            echo produit_template_User($produit,$wizard);
+          }
+        }
+      } else if ($_SESSION['user_type'] == 'admin'){
+        foreach ($table_product as $produit) {
+          foreach( $table_wizard as $wizard){
+            echo produit_template($produit,$wizard);
+          }
+        }
+      } else if ($_SESSION['user_type'] == 'wizard'){
+        foreach ($table_product as $produit) {
+          foreach( $table_wizard as $wizard){
+            echo produit_template($produit,$wizard);
+          }
+        }
+      } else {
+        foreach ($table_product as $produit) {
+          foreach( $table_wizard as $wizard){
+            echo produit_template_User($produit,$wizard);
+          }
         }
       }
     ?>

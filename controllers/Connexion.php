@@ -4,52 +4,48 @@ $name = '';
 $user_message = '';
 $message_password = '';
 $message = '';
-$tableChoice = '';
-$id_colum = '';
-$nameColum = '';
-$passwordColum = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (!empty($_POST['name_user']) && !empty($_POST['password']) && !empty($_POST['user_type'])) {
+    if (!empty($_POST['name_user']) && !empty($_POST['password'])) {
         $name_user = htmlspecialchars($_POST['name_user']);
-        $password = $_POST['password'];
-        $user_type = $_POST['user_type'];
+        $nameChek = [$name_user];
+    
+        $req_name = $bdd->prepare("SELECT password FROM user WHERE name = ?");
+        $req_name->execute($nameChek);
 
-        if ($user_type == 'admin') {
-            $tableChoice = 'admin';
-            $nameColum = 'admin_name';
-            $passwordColum = 'admin_password';
-            $id_colum = 'id_admin';
-        } else if ($user_type == 'wizard') {
-            $tableChoice = 'wizard';
-            $nameColum = 'wizard_name';
-            $passwordColum = 'wizard_password';
-            $id_colum = 'id_wizard';
+        if($req_name->rowCount() > 0) {
+
+            $table_user = $req_name->fetchAll(PDO::FETCH_ASSOC);
+
+            $password = $_POST['password'];
+            $hash = $table_user[0]['password'];
+            $passwordCheck = password_verify($password, trim($hash));
+            
+            if($passwordCheck === true) {
+    
+                $recupUser = $bdd->prepare("SELECT * FROM user WHERE name =?");
+                $recupUser->execute($nameChek);
+        
+                $table = $recupUser->fetchAll(PDO::FETCH_ASSOC);
+                // var_dump($table);
+                
+                $_SESSION['name_user'] = $name_user;
+                $_SESSION['password'] = $password;
+                $_SESSION['user_type'] =  $table[0]['role_id'];
+                $_SESSION['id'] = $table[0]['id'];;
+                // var_dump($_SESSION['id']);
+                header('Location: ../../views/pages/index.php');
+    
+            } else {
+                $message = "Votre mot de passe est incorrect";
+            }
         } else {
-            $tableChoice = 'user';
-            $nameColum = 'user_name';
-            $passwordColum = 'user_password';
-            $id_colum = 'id_user';
-        }
-
-        $autentification = [$name_user, $password];
-
-        $recupUser = $bdd->prepare("SELECT * FROM $tableChoice WHERE $nameColum = ? AND $passwordColum = ?");
-        $recupUser->execute($autentification);
-
-        if ($recupUser->rowCount() > 0) {
-            // echo "Connexion réussi";
-            $_SESSION['name_user'] = $name_user;
-            $_SESSION['password'] = $password;
-            $_SESSION['user_type'] =  $tableChoice;
-            $_SESSION[$id_colum] = $recupUser->fetch()[$id_colum];
-            header('Location: ../../views/pages/index.php');
-        } else {
-            $message = "Votre mot de passe ou nom d'utilisateur est incorrect";
+            $message = "Votre nom d'utilisateur n'existe pas !";
         }
     } else {
         $name = $message_password = $user_message = '<span style="color:red">*Ce champ est obligatoire</span>';
         $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
     }
 }
+

@@ -1,16 +1,21 @@
 <?php
-$req = $bdd->query('SELECT * FROM product INNER JOIN wizard ON product.wizard_id_wizard = wizard.id_wizard');
-$reponse = $bdd->query('SELECT * FROM category_has_product INNER JOIN product ON category_has_product.product_id_product = product.id_product');
 
-$table_wizard = $req->fetchAll(PDO::FETCH_ASSOC);
+$reponse = $bdd->query('SELECT * 
+FROM product p 
+INNER JOIN category c 
+ON p.category_id = c.id
+JOIN user u
+ON p.user_id = u.id'
+);
+
 $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($table_product);
 
 $id = $_GET['id_product'];
 
 foreach ($table_product as $produit) {
-    foreach($table_wizard as $wizard){
-        if ($produit['id_product'] == $id) {
-            echo '
+    if ($produit['product_id'] == $id) {
+        echo '
             <section class="style_section_product">
                 <h3 class="title_product">Potion ' . $produit['product_name'] . '</h3>
                 <div class="dispo_infos_product">
@@ -20,16 +25,16 @@ foreach ($table_product as $produit) {
                         </div>
                         <div class="dispo_titre_description">
                             <div class="dispo_img_h4_sorcier">
-                                <h4 class="soustitre_produit">(Crée par ' . $wizard['wizard_name'] . ')</h4>
-                                <img src="' . $wizard['wizard_image'] . '" alt="photo'.$wizard['wizard_name'].'" class="sorcier">
+                                <h4 class="soustitre_produit">(Crée par ' . $produit['name'] . ')</h4>
+                                <img src="' . $produit['image'] . '" alt="photo' . $produit['name'] . '" class="sorcier">
                             </div>
-                            <p class="p_product">Description : ' . $produit['product_description'] . '</p>
-                            <p class="prix_product"> Prix : ' . $produit['price'] .'€</p>
+                            <p class="p_product">Description : ' . $produit['description'] . '</p>
+                            <p class="type_product">'.$produit['type_category'].'</p>
+                            <p class="prix_product"> Prix : ' . $produit['price'] . '€</p>
                         </div>
                     </div>
                 </div>
             </section>
-            ';
-        }
+        ';
     }
 }

@@ -52,11 +52,11 @@ require_once '../../utilities/db.php';
         }
       } else if ($_SESSION['user_type'] == 2){
         foreach ($table_product as $produit) {
-          echo produit_template($produit,$wizard);
+          echo produit_template($produit);
         }
       } else {
         foreach ($table_product as $produit) {
-          echo produit_template_User($produit,$wizard);
+          echo produit_template_User($produit);
         }
       }
     ?>

@@ -2,7 +2,7 @@
 
 $servername = 'localhost';
 $username = 'root';
-$database = 'drug_store';
+$database = 'store_wizard';
 
 //On essaie de se connecter à la base de données test
 try{

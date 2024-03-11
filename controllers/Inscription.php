@@ -1,34 +1,20 @@
 <?php
+
 $name = '';
 $user_message = '';
 $message_password = '';
 $message = '';
-$tableChoice = '';
-$id_colum = '';
-$nameColum = '';
-$passwordColum = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!empty($_POST['name_user']) && !empty($_POST['password']) && !empty($_POST['user_type'])) {
+    if (!empty($_POST['name_user']) && !empty($_POST['password'])) {
         $name_user = htmlspecialchars($_POST['name_user']);
-        $password = $_POST['password'];
-        $user_type = $_POST['user_type'];
+        $password = password_hash($_POST['password'],PASSWORD_DEFAULT,['cost' => 12]);
+        $image = '../../asset/img/personnage/default-img.png';
+        $user_default = 1;
 
-        if ($user_type == 'wizard') {
-            $tableChoice = 'wizard';
-            $nameColum = 'wizard_name';
-            $passwordColum = 'wizard_password';
-            $id_colum = 'id_wizard';
-        } else {
-            $tableChoice = 'user';
-            $nameColum = 'user_name';
-            $passwordColum = 'user_password';
-            $id_colum = 'id_user';
-        }
+        $sub = [$name_user,  $password, $image, $user_default];
 
-        $sub = [$name_user,  $password];
-
-        $insertUser = $bdd->prepare("INSERT INTO $tableChoice($nameColum,$passwordColum)VALUES(?,?)");
+        $insertUser = $bdd->prepare("INSERT INTO user(name,password,image,role_id)VALUES(?,?,?,?)");
         $insertUser->execute($sub);
 
         header('Location: ../../views/pages/index.php');

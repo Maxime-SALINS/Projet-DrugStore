@@ -19,15 +19,7 @@ require_once '../../controllers/Inscription.php';
                 <?php echo $message_password?>
             </div>
             <div>
-                <select name="user_type" id="user_type">
-                    <option value="">Choix utilisateur</option>
-                    <option value="user">Utilisateur</option>
-                    <option value="wizard">Sorcier</option>
-                </select>
-                <?php echo $user_message?>
-            </div>
-            <div>
-                <button type="submit">Connexion</button>
+                <button type="submit">Inscription</button>
             </div>
             <?php echo $message?>
         </form>

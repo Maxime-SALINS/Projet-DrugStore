@@ -33,6 +33,9 @@ function headerWizard(){
             <a class="stylea" href="ajout_produit.php">Ajout produit</a>
         </li>
         <li>
+            <a class="stylea" href="profil_wizard.php">Votre profil</a>
+        </li>
+        <li>
             <a class="stylea" target="_blank" href="contact.php">Contact</a>
         </li>
     </ul>

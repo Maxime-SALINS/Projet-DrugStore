@@ -10,10 +10,10 @@ function headerAdmin(){
             <a class="stylea" href="ajout_produit.php">Ajout produit</a>
         </li>
         <li>
-            <a class="stylea" href="ajout_wizard.php">Ajout sorcier</a>
+            <a class="stylea" href="#">Gestion commande</a>
         </li>
         <li>
-            <a class="stylea" href="ajout_wizard.php">Gestion rôle</a>
+            <a class="stylea" href="role.php">Gestion rôle</a>
         </li>
     </ul>
     <ul class="ul_connexion">

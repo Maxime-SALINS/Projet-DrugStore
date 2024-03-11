@@ -189,6 +189,12 @@ h2{
     color: #EEBA30;
 }
 
+.type_product {
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
 /*----------------------- Style des images ----------------------*/
 
 .descrip{

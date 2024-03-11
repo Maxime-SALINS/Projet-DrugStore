@@ -32,36 +32,31 @@ require_once '../../utilities/db.php';
       // SELECT *
       // FROM A
       // INNER JOIN B ON A.key = B.key
-      $req = $bdd->query('SELECT * FROM product INNER JOIN wizard ON product.wizard_id_wizard = wizard.id_wizard');
-      $reponse = $bdd->query('SELECT * FROM category_has_product INNER JOIN product ON category_has_product.product_id_product = product.id_product');
+      $reponse = $bdd->query('SELECT * 
+      FROM product p 
+      INNER JOIN category c 
+      ON p.category_id = c.id
+      JOIN user u
+      ON p.user_id = u.id'
+      );
 
-      $table_wizard = $req->fetchAll(PDO::FETCH_ASSOC);
       $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
       // var_dump($table_product);
-      // var_dump($table_wizard);
       if (empty($_SESSION['user_type'])) {
         foreach ($table_product as $produit) {
-          foreach( $table_wizard as $wizard){
-            echo produit_template_User($produit,$wizard);
-          }
+          echo produit_template_User($produit);
         }
-      } else if ($_SESSION['user_type'] == 'admin'){
+      } else if ($_SESSION['user_type'] == 3){
         foreach ($table_product as $produit) {
-          foreach( $table_wizard as $wizard){
-            echo produit_template($produit,$wizard);
-          }
+          echo produit_template($produit);
         }
-      } else if ($_SESSION['user_type'] == 'wizard'){
+      } else if ($_SESSION['user_type'] == 2){
         foreach ($table_product as $produit) {
-          foreach( $table_wizard as $wizard){
-            echo produit_template($produit,$wizard);
-          }
+          echo produit_template($produit,$wizard);
         }
       } else {
         foreach ($table_product as $produit) {
-          foreach( $table_wizard as $wizard){
-            echo produit_template_User($produit,$wizard);
-          }
+          echo produit_template_User($produit,$wizard);
         }
       }
     ?>
@@ -87,4 +82,4 @@ require_once '../../utilities/db.php';
     </div>
   </div>
 </section>
-<?php  require_once '../../views/components/footer.php';?>
+<?php  require_once '../../views/components/footer.php'; ?>

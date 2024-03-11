@@ -1,5 +1,5 @@
 <?php
-function produit_template($produit,$wizard) {
+function produit_template($produit) {
     echo '
     <div class="produit">
         <div class="dispo_img_potion">
@@ -7,21 +7,22 @@ function produit_template($produit,$wizard) {
         </div>
         <div class="dispo_titre_description">
             <h3 class="titre_produit">Potion ' . $produit['product_name'] . '</h3>
+            <p class="type_product">'.$produit['type_category'].'</p>
             <div class="dispo_img_h4_sorcier">
-                <h4 class="soustitre_produit">(Crée par ' . $wizard['wizard_name'] . ')</h4>
-                <img src="' . $wizard['wizard_image'] . '" alt="photo Harry Potter" class="sorcier">
+                <h4 class="soustitre_produit">(Crée par ' . $produit['name'] . ')</h4>
+                <img src="' . $produit['image'] . '" alt="photo Harry Potter" class="sorcier">
             </div>
             <div class="style_lien">
-                <a class="style_a" href="produit.php?id_product='.$produit['id_product'].'">En savoir plus</a>
-                <a class="style_a" href="modif.php?id_product='.$produit['id_product'].'">Modification</a>
-                <a class="style_a" href="../../controllers/Delete.php?id_product='.$produit['id_product'].'">Supprimer</a>
+                <a class="style_a" href="produit.php?id_product='.$produit['product_id'].'">En savoir plus</a>
+                <a class="style_a" href="modif.php?id_product='.$produit['product_id'].'">Modification</a>
+                <a class="style_a" href="../../controllers/Delete.php?id_product='.$produit['product_id'].'">Supprimer</a>
             </div>
         </div>
     </div>
     ';
 }
 
-function produit_template_User($produit,$wizard) {
+function produit_template_User($produit) {
     echo '
     <div class="produit">
         <div class="dispo_img_potion">
@@ -29,12 +30,13 @@ function produit_template_User($produit,$wizard) {
         </div>
         <div class="dispo_titre_description">
             <h3 class="titre_produit">Potion ' . $produit['product_name'] . '</h3>
+            <p class="type_product">'.$produit['type_category'].'</p>
             <div class="dispo_img_h4_sorcier">
-                <h4 class="soustitre_produit">(Crée par ' . $wizard['wizard_name'] . ')</h4>
-                <img src="' . $wizard['wizard_image'] . '" alt="photo Harry Potter" class="sorcier">
+                <h4 class="soustitre_produit">(Crée par ' . $produit['name'] . ')</h4>
+                <img src="' . $produit['image'] . '" alt="photo Harry Potter" class="sorcier">
             </div>
             <div class="style_lien">
-                <a class="style_a" href="produit.php?id_product='.$produit['id_product'].'">En savoir plus</a>
+                <a class="style_a" href="produit.php?id_product='.$produit['product_id'].'">En savoir plus</a>
             </div>
         </div>
     </div>

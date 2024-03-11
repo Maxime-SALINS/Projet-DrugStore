@@ -13,7 +13,7 @@ function headerAdmin(){
             <a class="stylea" href="ajout_wizard.php">Ajout sorcier</a>
         </li>
         <li>
-            <a class="stylea" target="_blank" href="contact.php">Contact</a>
+            <a class="stylea" href="ajout_wizard.php">Gestion rôle</a>
         </li>
     </ul>
     <ul class="ul_connexion">

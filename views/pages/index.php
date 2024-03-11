@@ -24,41 +24,69 @@ require_once '../../utilities/db.php';
   </div>
 </section>
 <section class="potion">
-  <h2 id="produit" class="titre_section">Les Potions d'Eldia</h2>
+  <h2 id="produit" class="titre_section">
+    <?php
+    if (!empty($_SESSION['name_user'])) {
+      $titre = 'Voici vos produits ' . $_SESSION['name_user'] . '';
+    } else {
+      $titre = '';
+    }
+    echo empty($titre) ? "Les Potions d'Eldia" : $titre;
+    ?>
+  </h2>
   <div class="card">
-    <?php 
-      require_once ('../../views/components/produit_template.php');
+    <?php
+    require_once('../../views/components/produit_template.php');
 
-      // SELECT *
-      // FROM A
-      // INNER JOIN B ON A.key = B.key
-      $reponse = $bdd->query('SELECT * 
+    // SELECT *
+    // FROM A
+    // INNER JOIN B ON A.key = B.key
+    $reponse = $bdd->query(
+      'SELECT * 
       FROM product p 
       INNER JOIN category c 
       ON p.category_id = c.id
       JOIN user u
       ON p.user_id = u.id'
-      );
+    );
 
-      $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
-      // var_dump($table_product);
-      if (empty($_SESSION['user_type'])) {
-        foreach ($table_product as $produit) {
-          echo produit_template_User($produit);
-        }
-      } else if ($_SESSION['user_type'] == 3){
-        foreach ($table_product as $produit) {
-          echo produit_template($produit);
-        }
-      } else if ($_SESSION['user_type'] == 2){
-        foreach ($table_product as $produit) {
-          echo produit_template($produit);
-        }
-      } else {
-        foreach ($table_product as $produit) {
-          echo produit_template_User($produit);
-        }
+    $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($table_product);
+    if (empty($_SESSION['user_type'])) {
+      foreach ($table_product as $produit) {
+        echo produit_template_User($produit);
       }
+    } else if ($_SESSION['user_type'] == 'admin') {
+      foreach ($table_product as $produit) {
+        echo produit_template($produit);
+      }
+    } else if ($_SESSION['user_type'] == 'wizard') {
+
+      $username = $_SESSION['name_user'];
+
+      $query_wizard = $bdd->prepare("SELECT *
+        FROM user u
+        INNER JOIN product p
+        ON u.id = p.user_id
+        JOIN category c
+        ON p.category_id = c.id
+        WHERE name = :name
+        ");
+
+      $query_wizard->bindValue(':name', $username);
+      $query_wizard->execute();
+
+      $table_product = $query_wizard->fetchAll(PDO::FETCH_ASSOC);
+      // var_dump($table_product);
+
+      foreach ($table_product as $produit) {
+        echo produit_template($produit);
+      }
+    } else {
+      foreach ($table_product as $produit) {
+        echo produit_template_User($produit);
+      }
+    }
     ?>
   </div>
 </section>
@@ -82,4 +110,4 @@ require_once '../../utilities/db.php';
     </div>
   </div>
 </section>
-<?php  require_once '../../views/components/footer.php'; ?>
+<?php require_once '../../views/components/footer.php'; ?>

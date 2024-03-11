@@ -24,7 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if($passwordCheck === true) {
     
-                $recupUser = $bdd->prepare("SELECT * FROM user WHERE name =?");
+                $recupUser = $bdd->prepare("SELECT * 
+                FROM user u 
+                INNER JOIN role r 
+                ON u.role_id = r.idrole 
+                WHERE name =?"
+                );
                 $recupUser->execute($nameChek);
         
                 $table = $recupUser->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 $_SESSION['name_user'] = $name_user;
                 $_SESSION['password'] = $password;
-                $_SESSION['user_type'] =  $table[0]['role_id'];
+                $_SESSION['user_type'] =  $table[0]['role'];
                 $_SESSION['id'] = $table[0]['id'];;
                 // var_dump($_SESSION['id']);
                 header('Location: ../../views/pages/index.php');

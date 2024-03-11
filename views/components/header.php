@@ -26,9 +26,9 @@ require_once 'header_template.php';
       <?php 
       if (empty($_SESSION['user_type'])) {
         echo headerUser();
-      } else if ($_SESSION['user_type'] == 3){
+      } else if ($_SESSION['user_type'] == 'admin'){
         echo headerAdmin();
-      } else if ($_SESSION['user_type'] == 2){
+      } else if ($_SESSION['user_type'] == 'wizard'){
         echo headerWizard();
       } else {
         echo headerUserLogin();

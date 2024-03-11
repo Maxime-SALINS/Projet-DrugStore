@@ -35,7 +35,7 @@ require_once '../../controllers/Update-role.php';
                         }
                     ?>
                 </select>
-                <?php //echo $wizard_message?>
+                <?php echo $wizard_message?>
             </div>
             <div>
             <label for="wizard">Sélectionner le nouveau role</label>
@@ -49,12 +49,12 @@ require_once '../../controllers/Update-role.php';
                         }
                     ?>
                 </select>
-                <?php //echo $wizard_message?>
+                <?php echo $wizard_message?>
             </div>
             <div>
                 <button class="buttonlivredor" type="submit">ENVOYER !</button>
             </div>
-            <?php //echo $message?>
+            <?php echo $message?>
         </form>
     </div>
 </section>

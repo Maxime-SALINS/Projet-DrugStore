@@ -79,3 +79,25 @@ function updateWizarsImage($bdd, $image_wizard, $name_wizard) {
     // On execute la requête
     $query_update->execute();
 }
+
+function selectRoleUpdate($bdd){
+    $query_role = $bdd->query("SELECT * FROM role");
+
+    $table_role = $query_role->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($table_role);
+
+    return $table_role;
+}
+
+function selectWizardUpdate($bdd) {
+    $query_user = $bdd->query("SELECT u.id, u.name, r.idrole, r.role 
+    FROM user u 
+    INNER JOIN role r 
+    ON u.role_id = r.idrole"
+    );
+
+    $table_user = $query_user->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($table_user);
+
+    return $table_user;
+}

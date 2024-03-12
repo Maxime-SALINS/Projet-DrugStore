@@ -1,23 +1,14 @@
 <?php
 $title = "Page | Gestion rôle";
-require_once '../../views/components/header.php';
-require_once '../../utilities/db.php';
+require_once dirname(__DIR__) . '/components/header.php';
+require_once dirname(dirname(__DIR__)) . '/utilities/db.php';
+require_once dirname(dirname(__DIR__)) . '/function/user.fn.php';
 
-$query_role = $bdd->query("SELECT * FROM role");
+$table_role = selectRoleUpdate($bdd);
+$table_user = selectWizardUpdate($bdd);
 
-$table_role = $query_role->fetchAll(PDO::FETCH_ASSOC);
-// var_dump($table_role);
-
-$query_user = $bdd->query("SELECT u.id, u.name, r.idrole, r.role 
-FROM user u 
-INNER JOIN role r 
-ON u.role_id = r.idrole"
-);
-
-$table_user = $query_user->fetchAll(PDO::FETCH_ASSOC);
-// var_dump($table_user);
-
-require_once '../../controllers/Update-role.php';
+require_once dirname(dirname(__DIR__)) . '/controllers/Update-role.php';
+require_once dirname(dirname(__DIR__)) . '/function/select.fn.php';
 ?>
 <section>
     <h2>Modification des rôles utilisateur</h2>
@@ -28,9 +19,7 @@ require_once '../../controllers/Update-role.php';
                 <select name="user" id="user">
                     <option value="" >Choix de l'utilisateur</option>
                     <?php
-                        require_once '../../views/components/select_wizard.php';
-
-                        foreach ( $table_user as $wizard) {
+                        foreach ($table_user as $wizard) {
                             echo selectWizard($wizard);
                         }
                     ?>
@@ -42,9 +31,7 @@ require_once '../../controllers/Update-role.php';
                 <select name="role" id="role">
                     <option value="">Choix du rôle</option>
                     <?php
-                        require_once '../../views/components/select_role.php';
-            
-                        foreach ( $table_role as $role) {
+                        foreach ($table_role as $role) {
                             echo selectRole($role);
                         }
                     ?>
@@ -60,4 +47,4 @@ require_once '../../controllers/Update-role.php';
 </section>
 
 
-<?php require_once '../../views/components/footer.php';?>
+<?php require_once dirname(__DIR__) . '/components/footer.php';?>

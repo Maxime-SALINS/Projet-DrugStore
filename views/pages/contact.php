@@ -1,6 +1,6 @@
 <?php
 $title = "Page | Contact";
-require_once ('../../views/components/header.php');
+require_once dirname(__DIR__) . '/components/header.php';
 ?>
     <main>
         <section class="formulaire">
@@ -40,4 +40,4 @@ require_once ('../../views/components/header.php');
             </div>
         </section>
     </main>
-<?php  require_once '../../views/components/footer.php';?>
+<?php  require_once dirname(__DIR__) . '/components/footer.php';?>

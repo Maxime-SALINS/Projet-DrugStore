@@ -1,9 +1,10 @@
 <?php
 
 $title = "Page | Connexion";
-require_once '../../views/components/header.php';
-require_once '../../utilities/db.php';
-require_once '../../controllers/Connexion.php';
+
+require_once dirname(__DIR__) . '/components/header.php';
+require_once dirname(dirname(__DIR__)) . '/utilities/db.php';
+require_once dirname(dirname(__DIR__)) . '/controllers/Connexion.php';
 
 ?>
 <section>
@@ -26,4 +27,4 @@ require_once '../../controllers/Connexion.php';
     </div>
 </section>
 
-<?php  require_once '../../views/components/footer.php';?>
+<?php  require_once dirname(__DIR__) . '/components/footer.php';?>

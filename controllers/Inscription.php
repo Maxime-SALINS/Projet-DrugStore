@@ -14,12 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($_POST['name_user']) && !empty($_POST['password'])) {
         $name_user = htmlspecialchars($_POST['name_user']);
         $password = password_hash($_POST['password'],PASSWORD_DEFAULT,['cost' => 12]);
-        $image = '../../asset/img/personnage/default-img.png';
-        $user_default = 1;
 
         if(!in_array($name_user, array_column($table_user, "name"))){
 
-            userSubcribe($bdd, $name_user, $password, $image, $user_default);
+            userSubscribe($bdd, $name_user, $password);
     
             header('Location: ../../views/pages/index.php');
         } else {

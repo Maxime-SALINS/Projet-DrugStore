@@ -1,7 +1,7 @@
 <?php
 $title = "Page | Accueil";
 require_once dirname(__DIR__) . '/components/header.php';
-require_once '../../utilities/db.php';
+require_once dirname(dirname(__DIR__)) .'/utilities/db.php';
 ?>
 <section class="sec1">
   <h1>La boutique du sorcier</h1>

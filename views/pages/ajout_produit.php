@@ -1,34 +1,15 @@
 <?php
 $title = "Page | Ajout produit";
-require_once '../../views/components/header.php';
-require_once '../../utilities/db.php';
+require_once dirname(__DIR__) . '/components/header.php';
+require_once dirname(dirname(__DIR__)) . '/utilities/db.php';
+require_once dirname(dirname(__DIR__)) . '/function/product.fn.php';
+require_once dirname(dirname(__DIR__)) . '/function/select.fn.php';
 
-//Requête pour récupèrer les wizards
-$req_user = $bdd->query("SELECT * 
-FROM role r
-INNER JOIN user u
-ON r.idrole = u.role_id
-WHERE role = 'wizard'
-");
-
-$table_user = $req_user->fetchAll(PDO::FETCH_ASSOC);
-
-//Requête pour récupèrer les category
-$query_category = $bdd->query("SELECT * 
-FROM category 
-");
-
-$table_category = $query_category->fetchAll(PDO::FETCH_ASSOC);
-
-//Requête pour récupèrer les produits
-$query_product = $bdd->query("SELECT * 
-FROM product 
-");
-
-$table_product = $query_product->fetchAll(PDO::FETCH_ASSOC);
+$table_user = queryWizard($bdd);
+$table_category = queryCategory($bdd);
 
 //Appel de la logique pour rajouter un produit
-require_once '../../controllers/Create_product.php';
+require_once dirname(dirname(__DIR__)) . '/controllers/Create_product.php';
 
 ?>
 
@@ -53,8 +34,6 @@ require_once '../../controllers/Create_product.php';
                 <select name="category" id="category">
                     <option value="" >Choix du catégorie</option>
                     <?php
-                        require_once '../../views/components/select_category.php';
-
                         foreach ($table_category as $category) {
                             echo selectCategory($category);
                         }
@@ -67,8 +46,6 @@ require_once '../../controllers/Create_product.php';
                 <select name="wizard" id="wizard">
                     <option value="" >Choix du sorcier</option>
                     <?php
-                        require_once '../../views/components/select_wizard.php';
-
                         foreach ($table_user as $wizard) {
                             echo selectWizard($wizard);
                         }
@@ -89,4 +66,4 @@ require_once '../../controllers/Create_product.php';
     </div>
 </section>
 
-<?php require_once '../../views/components/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/components/footer.php'; ?>

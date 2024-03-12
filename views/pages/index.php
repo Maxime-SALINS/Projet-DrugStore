@@ -1,7 +1,12 @@
 <?php
+
 $title = "Page | Accueil";
+
 require_once dirname(__DIR__) . '/components/header.php';
 require_once dirname(dirname(__DIR__)) .'/utilities/db.php';
+require_once dirname(dirname(__DIR__)) .'/function/product.fn.php';
+require_once dirname(dirname(__DIR__)).'/function/produit_template.fn.php';
+
 ?>
 <section class="sec1">
   <h1>La boutique du sorcier</h1>
@@ -26,7 +31,7 @@ require_once dirname(dirname(__DIR__)) .'/utilities/db.php';
 <section class="potion">
   <h2 id="produit" class="titre_section">
     <?php
-    if (!empty($_SESSION['name'])) {
+    if (!empty($_SESSION['name']) && $_SESSION['role'] != 'admin') {
       $titre = 'Voici vos produits ' . $_SESSION['name'] . '';
     } else {
       $titre = '';
@@ -36,22 +41,9 @@ require_once dirname(dirname(__DIR__)) .'/utilities/db.php';
   </h2>
   <div class="card">
     <?php
-    require_once dirname(__DIR__).'/components/produit_template.php';
 
-    // SELECT *
-    // FROM A
-    // INNER JOIN B ON A.key = B.key
-    $reponse = $bdd->query(
-      'SELECT * 
-      FROM product p 
-      INNER JOIN category c 
-      ON p.category_id = c.id
-      JOIN user u
-      ON p.user_id = u.id'
-    );
+    $table_product = queryProductIndex($bdd);
 
-    $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
-    // var_dump($table_product);
     if (empty($_SESSION['role'])) {
       foreach ($table_product as $produit) {
         echo produit_template_User($produit);
@@ -64,20 +56,7 @@ require_once dirname(dirname(__DIR__)) .'/utilities/db.php';
 
       $username = $_SESSION['name'];
 
-      $query_wizard = $bdd->prepare("SELECT *
-        FROM user u
-        INNER JOIN product p
-        ON u.id = p.user_id
-        JOIN category c
-        ON p.category_id = c.id
-        WHERE name = :name
-        ");
-
-      $query_wizard->bindValue(':name', $username);
-      $query_wizard->execute();
-
-      $table_product = $query_wizard->fetchAll(PDO::FETCH_ASSOC);
-      // var_dump($table_product);
+      $table_product = queryWizardIndex($bdd,$username);
 
       foreach ($table_product as $produit) {
         echo produit_template($produit);

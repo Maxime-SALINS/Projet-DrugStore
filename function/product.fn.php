@@ -47,3 +47,38 @@ function queryProduct($bdd){
 
     return $table_product;
 }
+
+function queryProductIndex($bdd) {
+
+    $reponse = $bdd->query(
+        'SELECT * 
+        FROM product p 
+        INNER JOIN category c 
+        ON p.category_id = c.id
+        JOIN user u
+        ON p.user_id = u.id'
+    );
+  
+    $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
+
+    return $table_product;
+}
+
+function queryWizardIndex($bdd,$username){
+    $query_wizard = $bdd->prepare("SELECT *
+        FROM user u
+        INNER JOIN product p
+        ON u.id = p.user_id
+        JOIN category c
+        ON p.category_id = c.id
+        WHERE name = :name
+    ");
+
+    $query_wizard->bindValue(':name', $username);
+    $query_wizard->execute();
+
+    $table_product = $query_wizard->fetchAll(PDO::FETCH_ASSOC);
+
+    return $table_product;
+    
+}

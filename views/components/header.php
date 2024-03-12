@@ -3,7 +3,7 @@ if(empty($_SESSION['id'])){
   session_start();
 }
 
-require_once 'header_template.php';
+require_once dirname(dirname(__DIR__)) .'/function/header_template.fn.php';
 
 ?>
 

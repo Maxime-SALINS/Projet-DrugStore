@@ -48,6 +48,19 @@ function queryProduct($bdd){
     return $table_product;
 }
 
+function queryUpdateProduct($bdd, $id, $description, $prix){
+    //On prépare la requête SQL UPDATE
+    $reqprapare = $bdd->prepare("UPDATE product SET description = :description, price = :price WHERE product_id = :product_id");
+
+    //On Lie les variables $vendu et $stock à :vendu et :stock et $id à :id
+    $reqprapare->bindValue(':product_id', $id);
+    $reqprapare->bindValue(':description', $description);
+    $reqprapare->bindValue(':price', $prix);
+    
+    //On execute la requête
+    $reqprapare->execute();
+}
+
 function queryProductIndex($bdd) {
 
     $reponse = $bdd->query(
@@ -81,4 +94,15 @@ function queryWizardIndex($bdd,$username){
 
     return $table_product;
     
+}
+
+function queryDelete($bdd, $id){
+    //On prépare la requête SQL DELETE
+    $reqprepare = $bdd->prepare("DELETE FROM `product` WHERE product_id = :product_id");
+
+    //On Lie la variable $id à 'id'
+    $reqprepare->bindValue(':product_id', $id);
+
+    //On execute la requête
+    $reqprepare->execute();
 }

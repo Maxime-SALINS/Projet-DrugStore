@@ -1,15 +1,8 @@
 <?php
 
-$reponse = $bdd->query('SELECT * 
-FROM product p 
-INNER JOIN category c 
-ON p.category_id = c.id
-JOIN user u
-ON p.user_id = u.id'
-);
+require_once dirname(__DIR__) . '/function/product.fn.php';
 
-$table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
-// var_dump($table_product);
+$table_product = queryProductIndex($bdd);
 
 $id = $_GET['id_product'];
 

@@ -1,6 +1,6 @@
 <?php
 $title = "Page | Ajout sorcier";
-require_once '../../views/components/header.php';
+require_once dirname(__DIR__) .'/components/header.php';
 require_once '../../utilities/db.php';
 
 require_once '../../controllers/Update_wizard.php';
@@ -23,4 +23,4 @@ require_once '../../controllers/Update_wizard.php';
     </div>
 </section>
 
-<?php  require_once '../../views/components/footer.php';?>
+<?php  require_once dirname(__DIR__) . '/components/footer.php';?>

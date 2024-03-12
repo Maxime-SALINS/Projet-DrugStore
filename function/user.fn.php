@@ -66,3 +66,16 @@ function userSubscribe($bdd, $username, $password){
         }
     }
 }
+
+function updateWizarsImage($bdd, $image_wizard, $name_wizard) {
+    
+    // On utilise les requêtes préparées et des marqueurs nommés
+    $query_update = $bdd->prepare('UPDATE user SET image = :image WHERE name = :name');
+
+    //On Lie les variables à la requête
+    $query_update->bindValue(':image', $image_wizard);
+    $query_update->bindValue(':name', $name_wizard);
+    
+    // On execute la requête
+    $query_update->execute();
+}

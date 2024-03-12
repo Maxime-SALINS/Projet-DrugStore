@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(empty($_SESSION['id'])){
+  session_start();
+}
 
 require_once 'header_template.php';
 
@@ -24,11 +26,11 @@ require_once 'header_template.php';
     </div>
     <nav class="navbar">
       <?php 
-      if (empty($_SESSION['user_type'])) {
+      if (empty($_SESSION['role'])) {
         echo headerUser();
-      } else if ($_SESSION['user_type'] == 'admin'){
+      } else if ($_SESSION['role'] == 'admin'){
         echo headerAdmin();
-      } else if ($_SESSION['user_type'] == 'wizard'){
+      } else if ($_SESSION['role'] == 'wizard'){
         echo headerWizard();
       } else {
         echo headerUserLogin();

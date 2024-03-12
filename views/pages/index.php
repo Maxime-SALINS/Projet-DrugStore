@@ -26,8 +26,8 @@ require_once '../../utilities/db.php';
 <section class="potion">
   <h2 id="produit" class="titre_section">
     <?php
-    if (!empty($_SESSION['name_user'])) {
-      $titre = 'Voici vos produits ' . $_SESSION['name_user'] . '';
+    if (!empty($_SESSION['name'])) {
+      $titre = 'Voici vos produits ' . $_SESSION['name'] . '';
     } else {
       $titre = '';
     }
@@ -52,17 +52,17 @@ require_once '../../utilities/db.php';
 
     $table_product = $reponse->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($table_product);
-    if (empty($_SESSION['user_type'])) {
+    if (empty($_SESSION['role'])) {
       foreach ($table_product as $produit) {
         echo produit_template_User($produit);
       }
-    } else if ($_SESSION['user_type'] == 'admin') {
+    } else if ($_SESSION['role'] == 'admin') {
       foreach ($table_product as $produit) {
         echo produit_template($produit);
       }
-    } else if ($_SESSION['user_type'] == 'wizard') {
+    } else if ($_SESSION['role'] == 'wizard') {
 
-      $username = $_SESSION['name_user'];
+      $username = $_SESSION['name'];
 
       $query_wizard = $bdd->prepare("SELECT *
         FROM user u

@@ -21,7 +21,7 @@ require_once '../../controllers/Connexion.php';
             <div>
                 <button type="submit">Connexion</button>
             </div>
-            <?php echo $message?>
+            <?php echo empty($message) ? $connexion: $message ?>
         </form>
     </div>
 </section>

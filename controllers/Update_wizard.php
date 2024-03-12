@@ -3,7 +3,7 @@
 $img = '';
 $message = '';
 
-$name_wizard = $_SESSION['name_user'];
+$name_wizard = $_SESSION['name'];
 // var_dump($name_wizard);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

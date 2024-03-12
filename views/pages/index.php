@@ -1,6 +1,6 @@
 <?php
 $title = "Page | Accueil";
-require_once '../../views/components/header.php';
+require_once dirname(__DIR__) . '/components/header.php';
 require_once '../../utilities/db.php';
 ?>
 <section class="sec1">
@@ -36,7 +36,7 @@ require_once '../../utilities/db.php';
   </h2>
   <div class="card">
     <?php
-    require_once('../../views/components/produit_template.php');
+    require_once dirname(__DIR__).'/components/produit_template.php';
 
     // SELECT *
     // FROM A
@@ -110,4 +110,4 @@ require_once '../../utilities/db.php';
     </div>
   </div>
 </section>
-<?php require_once '../../views/components/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/components/footer.php'; ?>

@@ -37,3 +37,19 @@ function setUserSession ($bdd, $id, $username, $role){
     $_SESSION['role'] = $role;
 
 }
+
+function userSubcribe($bdd, $username, $password, $image, $user_default){
+
+    $insertTable = [
+        $username,
+        $password,
+        $image,
+        $user_default
+    ];
+
+    $sql = "INSERT INTO user(name,password,image,role_id) VALUES(?,?,?,?)";
+    $stmt = $bdd->prepare($sql);
+
+    $stmt->execute($insertTable);
+    
+}

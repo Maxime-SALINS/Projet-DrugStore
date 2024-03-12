@@ -1,7 +1,7 @@
 <?php
 
 $title = "Page | Inscription";
-require_once '../../views/components/header.php';
+require_once dirname(__DIR__) . '/components/header.php';
 require_once '../../utilities/db.php';
 require_once '../../controllers/Inscription.php';
 
@@ -26,4 +26,4 @@ require_once '../../controllers/Inscription.php';
     </div>
 </section>
 
-<?php  require_once '../../views/components/footer.php';?>
+<?php  require_once dirname(__DIR__) . '/components/footer.php';?>

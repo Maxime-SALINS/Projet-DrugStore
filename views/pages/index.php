@@ -77,7 +77,7 @@ require_once dirname(dirname(__DIR__)).'/function/produit_template.fn.php';
       if($_SESSION['role'] == 'wizard'){
         $titre;
       }
-      echo !empty($titre) ? "Les Potions d'Eldia" : $titre;
+      echo empty($titre) ? "Les Potions d'Eldia" : $titre;
     }
   ?>
 </h2>

@@ -106,3 +106,17 @@ function queryDelete($bdd, $id){
     //On execute la requête
     $reqprepare->execute();
 }
+
+function queryProductDefault($bdd, $username){
+    
+    $sql = "SELECT * FROM product p INNER JOIN user u ON p.user_id= u.id JOIN category c ON p.category_id = c.id WHERE u.name != :valeur";
+    $stmt = $bdd->prepare($sql);
+
+    $stmt->bindValue(':valeur', $username);
+
+    $stmt->execute();
+
+    $table_product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $table_product;
+}

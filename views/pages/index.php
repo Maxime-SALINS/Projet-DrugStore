@@ -31,10 +31,10 @@ require_once dirname(dirname(__DIR__)).'/function/produit_template.fn.php';
 <section class="potion">
   <h2 id="produit" class="titre_section">
     <?php
-    if (!empty($_SESSION['name']) && $_SESSION['role'] != 'admin') {
+    if (!empty($_SESSION['name']) && $_SESSION['role'] != 'admin' && $_SESSION['role'] != 'user') {
       $titre = 'Voici vos produits ' . $_SESSION['name'] . '';
     } else {
-      $titre = '';
+      $titre;
     }
     echo empty($titre) ? "Les Potions d'Eldia" : $titre;
     ?>
@@ -68,6 +68,34 @@ require_once dirname(dirname(__DIR__)).'/function/produit_template.fn.php';
     }
     ?>
   </div>
+</section>
+<section class="potion">
+<h2 id="produit_p2" class="titre_section">
+  <?php
+    $titre = '';
+    if (!empty($_SESSION)) {
+      if($_SESSION['role'] == 'wizard'){
+        $titre;
+      }
+      echo !empty($titre) ? "Les Potions d'Eldia" : $titre;
+    }
+  ?>
+</h2>
+<div class="card">
+  <?php
+
+  if (!empty($_SESSION)) {
+    if ($_SESSION['role'] == 'wizard') {
+      $username = $_SESSION['name'];
+      $table_product = queryProductDefault($bdd, $username);
+      
+      foreach ($table_product as $produit) {
+        echo produit_template_User($produit);
+      }
+    }
+  }
+?>
+</div>
 </section>
 <section id="team" class="personnel">
   <h2 class="titre_section">Le Personnel</h2>

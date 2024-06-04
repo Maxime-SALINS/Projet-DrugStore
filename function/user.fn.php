@@ -13,7 +13,7 @@ function login ($bdd, $username, $password){
         $msg_error = "Login ou mot de passe invalide";
         return ['result'=>false, 'msg'=> $msg_error];
     } else {
-        if(password_verify($password, $result->password)){
+        if(!password_verify($password, $result->password)){
             setUserSession($bdd, $result->id, $result->name, $result->role);
             $msg_sucess = "Connexion réussi";
             return ['result'=>true, 'msg'=> $msg_sucess];

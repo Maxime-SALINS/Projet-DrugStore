@@ -28,4 +28,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $message = "<span style='color:red'>Vous n'avez pas remplie tout les champs !</span>";
     }
 }
-
